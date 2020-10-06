@@ -11,8 +11,13 @@ pipeline {
                 credentialsId: 'none',
                 url: 'https://github.com/polinushka2/demo.git'
 
-            sh "ls -lat"
+            sh "ls -lat demo"
         }
     }
+	stage('Build') { 
+            steps {
+                sh 'mvn package' 
+            }
+        }	
 }
 }
