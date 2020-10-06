@@ -23,6 +23,11 @@ pipeline {
             steps {
                 sh 'cd demo; ./mvnw test'
             }
-        }
+        post {
+                always {
+                    junit 'target/surefire-reports/*.xml' 
+                }
+            }
+}
 }
 }
