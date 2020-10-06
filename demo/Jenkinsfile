@@ -1,0 +1,16 @@
+pipeline {
+    agent {
+        master
+    }
+    stages {
+    stage('Checkout external proj') {
+        steps {
+            git branch: 'main',
+                credentialsId: 'none',
+                url: 'https://github.com/polinushka2/demo.git'
+
+            sh "ls -lat"
+        }
+    }
+}
+}
