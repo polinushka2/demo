@@ -28,6 +28,13 @@ pipeline {
                     junit 'demo/target/surefire-reports/TEST*.xml' 
                 }
             }
+	}
+	stage(Build image'') {
+            steps {
+                sh 'docker build -t docker1 demo/DockerFile'
+                sh 'docker images'
+
+            }
 }
 }
 }
