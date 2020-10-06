@@ -17,6 +17,7 @@ pipeline {
 	stage('Build') { 
             steps {
 		sh 'chmod +x demo/mvnw; cd demo; ./mvnw package' 
+		sh 'cp demo/target/demo-0.0.1-SNAPSHOT.jar /home/polina/'
             }
         }	
 	stage('Test') {
