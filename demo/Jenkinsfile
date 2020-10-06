@@ -29,7 +29,7 @@ pipeline {
                 }
             }
 	}
-	stage(Build image'') {
+	stage('Build image') {
             steps {
                 sh 'docker build -t docker1 demo/DockerFile'
                 sh 'docker images'
