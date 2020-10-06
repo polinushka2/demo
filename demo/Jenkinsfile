@@ -11,13 +11,12 @@ pipeline {
                 credentialsId: 'none',
                 url: 'https://github.com/polinushka2/demo.git'
 
-            sh "ls -lat demo"
+            sh "ls -lat "
         }
     }
 	stage('Build') { 
             steps {
-                def mvnHome= demo
-		sh 'chmod +x ${mvnHome}/mvnw; ./${mvnHome}/mvnw package' 
+		sh 'chmod +x demo/mvnw; ./demo/mvnw package' 
             }
         }	
 }
