@@ -16,7 +16,7 @@ pipeline {
     }
 	stage('Build') { 
             steps {
-                sh './demo/mvnw package' 
+                sh 'chmod +x demo/mvnw; ./demo/mvnw package' 
             }
         }	
 }
