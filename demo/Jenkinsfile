@@ -1,8 +1,10 @@
 pipeline {
     agent {
-        master
+    node {
+        label 'master'
     }
-    stages {
+}
+  stages {
     stage('Checkout external proj') {
         steps {
             git branch: 'main',
